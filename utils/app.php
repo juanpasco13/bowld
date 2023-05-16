@@ -7,6 +7,7 @@ class App {
         $_SESSION['name'] ;
         $_SESSION['id'] ;
         $_SESSION['user'] ;
+        $_SESSION['rol'];
 
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, "/");
