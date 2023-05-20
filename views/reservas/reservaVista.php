@@ -9,28 +9,30 @@ include 'views/menu.php';
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Gestión de Pagos</h5>              
+              <h5 class="card-title">Gestión de Reservas</h5>              
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col">id</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Total a Pagar</th>
-                    <th scope="col">Total Pagado</th>
-                    <th scope="col">Estado</th>
+                    <th scope="col">Número Pista</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Hora Reserva</th>
+                    <th scope="col">Estado Pago</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php echo $_SESSION['name']; ?>
-                <?php foreach($this->datos as $pagos){?>
+                <?php foreach($this->datos as $reservas){?>
                   <tr>
-                    <th scope="row"><a type="button" class=" btn btn-sm" id="<?php echo $pagos['id']?>_id" data-bs-target="#userModal"  ><?php echo $pagos["id"] ?></a> </th>
+                    <th scope="row"><a type="button" class=" btn btn-sm" id="<?php echo $reservas['id']?>_id" data-bs-target="#userModal"  ><?php echo $reservas["id"] ?></a> </th>
                     <!-- <th scope="row"><?php echo $user['id']; ?></th> -->
-                    <td><?php echo $pagos['name']; ?></td>
-                    <td><?php echo $pagos['payment']; ?></td>
-                    <td><?php echo $pagos['deposit']; ?></td>
-                    <td><?php echo $pagos['status']; ?></td>
+                    <td><?php echo $reservas['name']; ?></td>
+                    <td><?php echo $reservas['Numero_Pista']; ?></td>
+                    <td><?php echo $reservas['price']; ?></td>
+                    <td><?php echo $reservas['hour']; ?></td>
+                    <td><?php echo $reservas['deposit']; ?></td>
                   </tr>
                   <?php } ?>
                 </tbody>

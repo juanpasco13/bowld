@@ -18,18 +18,26 @@
       </li><!-- End Users Nav -->
 
       <li class="nav-item">
+        <a class="nav-link collapsed" href="<?php echo constant('URL')?>reservas">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Reservas</span>
+        </a>
+      </li><!-- End Login Page Nav -->  
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="<?php echo constant('URL')?>pagos">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Pagos</span>
+        </a>
+      </li><!-- End Login Page Nav -->  
+
+      <li class="nav-item">
         <a class="nav-link " href="<?php echo constant('URL')?>info">
           <i class="bi bi-exclamation-circle"></i>
           <span>Informacion</span>
         </a>
       </li><!-- End information Nav -->    
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?php echo constant('URL')?>pagos">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Pagos - Nose</span>
-        </a>
-      </li><!-- End Login Page Nav -->  
 
       <li class="nav-heading">Adicional</li>
 
