@@ -22,7 +22,14 @@
           <i class="bi bi-exclamation-circle"></i>
           <span>Informacion</span>
         </a>
-      </li><!-- End information Nav -->      
+      </li><!-- End information Nav -->    
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="<?php echo constant('URL')?>pagos">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Pagos - Nose</span>
+        </a>
+      </li><!-- End Login Page Nav -->  
 
       <li class="nav-heading">Adicional</li>
 
@@ -32,6 +39,8 @@
           <span>Cerrar Sesion</span>
         </a>
       </li><!-- End Login Page Nav -->
+
+      
 
     </ul>
 

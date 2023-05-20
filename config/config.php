@@ -1,11 +1,11 @@
 <?php 
 
-define ('URL', 'http://localhost:80/gymax/');
+define ('URL', 'http://localhost:80/Bowld/');
 
 define('servename','localhost');        
 define('username','root');
 define('password','');
-define('dbname','gymax');
+define('dbname','Bowld');
 
 
 ?>

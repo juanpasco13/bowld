@@ -22,6 +22,7 @@ include 'views/menu.php';
                   </tr>
                 </thead>
                 <tbody>
+                  <?php echo $_SESSION['name']; ?>
                 <?php foreach($this->datos as $user){?>
                   <tr>
                     <th scope="row"><a type="button" class=" btn btn-sm" id="<?php echo $user['id']?>_id" data-bs-target="#userModal"  ><?php echo $user["id"] ?></a> </th>
