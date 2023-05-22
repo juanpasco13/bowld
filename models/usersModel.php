@@ -27,15 +27,10 @@ class UsersModel extends Model{
     }
 
     function getUserForUsername($user){
-        $data = '';
-        $query = "SELECT `user_name` FROM `users` WHERE `user_name` = '$user'";
         $this->db->connect();
-        $result = $this->db->getConnection()->query($query);
-        while ($row = $result->fetch_assoc()) {
-            $data = $row;
-        }
+        $result = $this->db->getConnection()->query("SELECT COUNT(*) as 'count' FROM `employees` WHERE `user_name` = '$user'")->fetch_assoc();
         $this->db->closeConnec();
-        return $data;
+        return $result['count'] > 0;
     }
 
     function updateUser($data){
@@ -47,9 +42,4 @@ class UsersModel extends Model{
         return $result; 
     }
 
-    function loadBanner($id){
-        include 'assets/img/banners/index.php';
-        $banner = new Banner();
-        return base64_decode($banner->message());
-    }
 }

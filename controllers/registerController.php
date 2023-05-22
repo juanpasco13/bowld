@@ -6,9 +6,8 @@ class Register extends Controller{
     }
 
     function registerUser($data){
-        if($this->model->validateName($data['username'])){
-            $this->model->registerUser($data);
-            return true;
+        if($this->model->validateName($data['username'], $data['document'])){
+            return $this->model->registerEmployee($data);
         }
         return false;
     }

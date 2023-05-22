@@ -12,11 +12,7 @@ class Users extends Controller{
     function updateUser($data){
         return $this->model->updateUser($data);
     }
-
-    function load($id){
-        echo $this->model->loadBanner($id);
-    }
-
+    
     function render(){
         $this->view->datos = $this->model->getUsers();
         $this->view->title = 'Usuarios';

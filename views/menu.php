@@ -1,47 +1,36 @@
   <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar" >
 
     <ul class="sidebar-nav" id="sidebar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link " href="<?php echo constant('URL')?>home">
-          <i class="bi bi-grid"></i>
-          <span>Principal</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link " href="<?php echo constant('URL')?>users">
-          <i class="ri-team-fill"></i>
-          <span>Usuarios</span>
-        </a>
-      </li><!-- End Users Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link " href="<?php echo constant('URL')?>info">
-          <i class="bi bi-exclamation-circle"></i>
-          <span>Informacion</span>
-        </a>
-      </li><!-- End information Nav -->    
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?php echo constant('URL')?>pagos">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Pagos - Nose</span>
-        </a>
-      </li><!-- End Login Page Nav -->  
+      <?php
+      require_once "utils/dataMenu.php";
+      $rol = $_SESSION['rol'];
+      
+      foreach ($funcionales as $field) {
+        if (in_array($rol, $field["permit"])) {
+      ?>
+          <li class="nav-item">
+            <a class="nav-link " href="<?php echo constant('URL') . $field["module"] ?>">
+              <i class="<?php echo $field["icon"] ?>"></i>
+              <span><?php echo $field["title"] ?></span>
+            </a>
+          </li><!-- End Dashboard Nav -->
+      <?php } } ?>
 
       <li class="nav-heading">Adicional</li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?php echo constant('URL')?>logout">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Cerrar Sesion</span>
-        </a>
-      </li><!-- End Login Page Nav -->
-
+      <?php 
       
+      foreach ($adds as $add) {
+      ?>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="<?php echo constant('URL') . $add["module"] ?>">
+          <i class="<?php echo $add["icon"] ?>"></i>
+          <span><?php echo $add["title"] ?></span>
+        </a>
+      </li><!-- End information Nav -->
+
+      <?php }  ?>
     </ul>
-
   </aside><!-- End Sidebar-->

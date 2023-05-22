@@ -46,12 +46,12 @@
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center" style="width: 80%;">
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
                   <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">GYMAX</span>
+                  <span class="d-none d-lg-block">BOWLD</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -59,39 +59,64 @@
 
                 <div class="card-body">
 
-                  <div class="pt-4 pb-2">
+                  <div class="pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Crea una cuenta</h5>
                     <p class="text-center small">Ingresa los siguientes datos para crear una cuenta</p>
                   </div>
 
-                  <form action="<?php echo constant('URL')?>record" method="POST" class="row g-3 needs-validation" novalidate>
-                    <div class="col-12">
-                      <label for="yourName" class="form-label">Nombre</label>
-                      <input type="text" name="name" class="form-control" id="yourName" required>
-                      <div class="invalid-feedback">Porfavor, ingresa tu nombre.</div>
-                    </div>
+                  <form action="<?php echo constant('URL') ?>record" method="POST" class="row g-3 needs-validation" novalidate>
+                    <div class="row">
+                      <div class="col-3">
+                        <label for="document" class="form-label">Numero de Documento</label>
+                        <input type="text" name="document" class="form-control" id="document" required>
+                        <div class="invalid-feedback">Porfavor, ingresa su numero de documento.</div>
+                      </div>
+                      <div class="col-5">
+                        <label for="name" class="form-label">Nombres</label>
+                        <input type="text" name="name" class="form-control" id="name" required>
+                        <div class="invalid-feedback">Porfavor, ingresa su nombre.</div>
+                      </div>
+                      <div class="col-4">
+                        <label for="lastName" class="form-label">Apellidos</label>
+                        <input type="text" name="lastName" class="form-control" id="lastName" required>
+                        <div class="invalid-feedback">Porfavor, ingresa sus Aoellidos.</div>
+                      </div>
 
-                    <div class="col-12">
-                      <label for="yourEmail" class="form-label">Email</label>
-                      <input type="email" name="email" class="form-control" id="yourEmail" required>
-                      <div class="invalid-feedback">Porfavor, ingresa una cuenta de correo valida.</div>
                     </div>
-
-                    <div class="col-12">
-                      <label for="yourUsername" class="form-label">Nombre de Usuario</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Porfavor seleccione un nombre de usuario.</div>
+                    <div class="row">
+                      <div class="col-6">
+                        <label for="yourEmail" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="yourEmail">
+                      </div>
+                      <div class="col-4">
+                        <label for="phone" class="form-label">Telefono</label>
+                        <input type="number" name="phone" class="form-control" id="phone" required>
+                        <div class="invalid-feedback">Porfavor ingrese su numero de telefono</div>
+                      </div>
+                      <div class="col-2">
+                        <label for="gender" class="form-label">Genero</label>
+                        <select class="form-select" id="gender" name="gender" required>
+                          <option value="2">Otro</option>
+                          <option value="0">Hombre</option>
+                          <option value="1">Mujer</option>
+                        </select>
                       </div>
                     </div>
-
-                    <div class="col-12">
-                      <label for="yourPassword" class="form-label">Contraseña</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Porfavor ingrese su contraseña!</div>
+                    <div class="row">
+                      <div class="col-6">
+                        <label for="yourUsername" class="form-label">Nombre de Usuario</label>
+                        <div class="input-group has-validation">
+                          <span class="input-group-text" id="inputGroupPrepend">@</span>
+                          <input type="text" name="username" class="form-control" id="yourUsername" required>
+                          <div class="invalid-feedback">Porfavor seleccione un nombre de usuario.</div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <label for="yourPassword" class="form-label">Contraseña</label>
+                        <input type="password" name="password" class="form-control" id="yourPassword" required>
+                        <div class="invalid-feedback">Porfavor ingrese su contraseña!</div>
+                      </div>
                     </div>
-
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
@@ -99,12 +124,16 @@
                         <div class="invalid-feedback">Debes de estar de acuerdo antes de enviar.</div>
                       </div>
                     </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Crear cuenta</button>
+                    <div class="row d-flex mt-4 justify-content-center">
+                      <div class="col-3 ">
+                        <button class="btn btn-primary w-100" type="submit">Crear cuenta</button>
+                      </div>
                     </div>
+                    
                     <div class="col-12">
-                      <p class="small mb-0">Ya tienes una cuenta? <a href="<?php echo constant('URL')?>login">Iniciar Sesion</a></p>
+                      <p class="small mb-0">Ya tienes una cuenta? <a href="<?php echo constant('URL') ?>login">Iniciar Sesion</a></p>
                     </div>
+
                   </form>
 
                 </div>

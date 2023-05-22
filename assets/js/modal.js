@@ -12,17 +12,16 @@ const getData = function(){
     document.querySelector("#email").readOnly = true;
     document.querySelector("#name").readOnly = true;
     document.querySelector(".modal-title").textContent = "";
-    fetch(window.location.protocol + "//" + window.location.host+ '/gymax/api/users/loaduser/'+this.innerText)
+    
+    fetch(window.location.protocol + "//" + window.location.host+ '/Bowld/api/users/loaduser/'+this.innerText)
         .then(response => response.json())
         .then(data => {
 
             document.querySelector(".modal-title").textContent = 'Usuario: '+ data['name'];
-            document.querySelector("#name").value = data['name'];
+            document.querySelector("#name").value = data['name']+" "+data['last_name'];
             document.querySelector("#id").value = data['id'];
-            document.querySelector("#user_name").value = data['user_name'];
             document.querySelector("#email").value = (data['email'] === null )? '' : data['email'];
             document.querySelector("#date_to").value = data['date_created'];
-            document.querySelector("#last_login").value = data['last_con'];
             son.style.visibility = 'hidden';
             son.style.opacity = '0';
             son.style.transition = 'all 500ms ease';
